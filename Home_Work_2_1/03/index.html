@@ -1,0 +1,21 @@
+<!-- Запросить у пользователя время (часы, минуты, секунды) и проверить корректность введенных данных. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка времени</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Проверка времени</h1>
+    <label for="hoursInput"></label><input type="number" id="hoursInput" placeholder="Введите часы (0-23)">
+    <label for="minutesInput"></label><input type="number" id="minutesInput" placeholder="Введите минуты (0-59)">
+    <label for="secondsInput"></label><input type="number" id="secondsInput" placeholder="Введите секунды (0-59)">
+    <button id="calculateButton">Проверить</button>
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
