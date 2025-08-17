@@ -1,0 +1,47 @@
+<!-- Реализуйте класс «Сотрудник». Необходимо хранить в полях класса: ФИО, дату рождения, контактный телефон,
+рабочий email, должность, описание служебных обязанностей. Реализуйте методы класса для ввода данных, вы
+вода данных, реализуйте доступ к отдельным полям через методы класса. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными сотрудника</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными сотрудника</h1>
+    <!-- Поле ввода для ФИО -->
+    <label for="fullNameInput"></label><input type="text" id="fullNameInput" placeholder="Введите ФИО">
+    <!-- Поле ввода для даты рождения -->
+    <label for="birthDateInput"></label><input type="text" id="birthDateInput" placeholder="Введите дату рождения (например, 1990-05-15)">
+    <!-- Поле ввода для контактного телефона -->
+    <label for="phoneInput"></label><input type="text" id="phoneInput" placeholder="Введите контактный телефон">
+    <!-- Поле ввода для рабочего email -->
+    <label for="emailInput"></label><input type="text" id="emailInput" placeholder="Введите рабочий email">
+    <!-- Поле ввода для должности -->
+    <label for="positionInput"></label><input type="text" id="positionInput" placeholder="Введите должность">
+    <!-- Поле ввода для описания служебных обязанностей -->
+    <label for="dutiesInput"></label><input type="text" id="dutiesInput" placeholder="Введите описание служебных обязанностей">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для получения ФИО -->
+    <button id="getFullNameButton">Получить ФИО</button>
+    <!-- Кнопка для получения даты рождения -->
+    <button id="getBirthDateButton">Получить дату рождения</button>
+    <!-- Кнопка для получения контактного телефона -->
+    <button id="getPhoneButton">Получить телефон</button>
+    <!-- Кнопка для получения рабочего email -->
+    <button id="getEmailButton">Получить email</button>
+    <!-- Кнопка для получения должности -->
+    <button id="getPositionButton">Получить должность</button>
+    <!-- Кнопка для получения описания обязанностей -->
+    <button id="getDutiesButton">Получить обязанности</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

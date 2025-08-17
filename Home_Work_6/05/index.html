@@ -1,0 +1,40 @@
+<!-- Запрограммируйте класс Money (объект класса оперирует одной валютой) для работы с деньгами.
+В классе должны быть предусмотрены поле для хранения целой части денег (доллары, евро, гривны и т.д.) и поле
+для хранения копеек (центы, евроценты, копейки и т.д.). Реализовать методы для вывода суммы на экран, задания значений для частей.
+На базе класса Money создать класс Product для работы с продуктом или товаром. Реализовать метод, позволяющий уменьшить цену на заданное число.
+Для каждого из классов реализовать необходимые методы и поля -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными продукта</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Контейнер для содержимого страницы -->
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными продукта</h1>
+    <!-- Поле ввода для названия продукта -->
+    <label for="nameInput"></label><input type="text" id="nameInput" placeholder="Введите название продукта">
+    <!-- Поле ввода для целой части цены -->
+    <label for="wholeInput"></label><input type="number" id="wholeInput" placeholder="Введите целую часть цены (руб)">
+    <!-- Поле ввода для копеек -->
+    <label for="centsInput"></label><input type="number" id="centsInput" placeholder="Введите копейки (0-99)">
+    <!-- Поле ввода для уменьшения цены -->
+    <label for="discountInput"></label><input type="number" id="discountInput" placeholder="Введите сумму уменьшения (руб)">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для уменьшения цены -->
+    <button id="reducePriceButton">Уменьшить цену</button>
+    <!-- Кнопка для получения названия продукта -->
+    <button id="getNameButton">Получить название</button>
+    <!-- Кнопка для получения цены -->
+    <button id="getPriceButton">Получить цену</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

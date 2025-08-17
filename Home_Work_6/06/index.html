@@ -1,0 +1,43 @@
+<!-- Создать базовый класс «Устройство» и производные классы «Чайник», «Микроволновка», «Автомобиль», «Пароход».
+С помощью конструктора установить имя каждого устройства и его характеристики.
+Реализуйте для каждого из классов методы:
+¦ Sound — издает звук устройства (пишем текстом в консоль);
+¦ Show — отображает название устройства;
+¦ Desc — отображает описание устройства. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными устройства</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными устройства</h1>
+    <!-- Выпадающий список для выбора типа устройства -->
+    <label for="deviceTypeInput"></label><select id="deviceTypeInput">
+        <option value="kettle">Чайник</option>
+        <option value="microwave">Микроволновка</option>
+        <option value="car">Автомобиль</option>
+        <option value="steamer">Пароход</option>
+    </select>
+    <!-- Поле ввода для имени устройства -->
+    <label for="nameInput"></label><input type="text" id="nameInput" placeholder="Введите имя устройства">
+    <!-- Поле ввода для характеристик устройства -->
+    <label for="specsInput"></label><input type="text" id="specsInput" placeholder="Введите характеристики устройства">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать устройство</button>
+    <!-- Кнопка для вызова метода Show -->
+    <button id="showButton">Показать название</button>
+    <!-- Кнопка для вызова метода Desc -->
+    <button id="descButton">Показать описание</button>
+    <!-- Кнопка для вызова метода Sound -->
+    <button id="soundButton">Издать звук</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

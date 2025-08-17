@@ -1,0 +1,35 @@
+<!-- Реализуйте класс «Матрица». Реализуйте конструкторы и методы класса для ввода данных, вывода данных,
+подсчёта максимума, подсчёта минимума. Используйте механизм перегрузки методов. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными матрицы</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Контейнер для содержимого страницы -->
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными матрицы</h1>
+    <!-- Поле ввода для количества строк -->
+    <label for="rowsInput"></label><input type="number" id="rowsInput" placeholder="Введите количество строк">
+    <!-- Поле ввода для количества столбцов -->
+    <label for="colsInput"></label><input type="number" id="colsInput" placeholder="Введите количество столбцов">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать матрицу</button>
+    <!-- Кнопка для обновления элементов -->
+    <button id="setElementsButton">Обновить элементы</button>
+    <!-- Кнопка для вывода матрицы -->
+    <button id="getMatrixButton">Показать матрицу</button>
+    <!-- Кнопка для подсчёта максимума -->
+    <button id="getMaxButton">Найти максимум</button>
+    <!-- Кнопка для подсчёта минимума -->
+    <button id="getMinButton">Найти минимум</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!--  Создать базовый класс «Животное» и производные классы «Тигр», «Крокодил», «Кенгуру». С помощью конструктора
+установить имя каждого животного и его характеристики.
+Создайте для каждого класса необходимые методы и поля. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными животного</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Контейнер для содержимого страницы -->
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными животного</h1>
+    <!-- Выпадающий список для выбора типа животного -->
+    <label for="animalTypeInput"></label><select id="animalTypeInput">
+        <option value="tiger">Тигр</option>
+        <option value="crocodile">Крокодил</option>
+        <option value="kangaroo">Кенгуру</option>
+    </select>
+    <!-- Поле ввода для имени -->
+    <label for="nameInput"></label><input type="text" id="nameInput" placeholder="Введите имя животного">
+    <!-- Поле ввода для возраста -->
+    <label for="ageInput"></label><input type="number" id="ageInput" placeholder="Введите возраст (годы)">
+    <!-- Поле ввода для максимальной скорости (для тигра) -->
+    <label for="maxSpeedInput"></label><input type="number" id="maxSpeedInput" placeholder="Введите максимальную скорость (км/ч, для тигра)">
+    <!-- Поле ввода для длины тела (для крокодила) -->
+    <label for="bodyLengthInput"></label><input type="number" id="bodyLengthInput" placeholder="Введите длину тела (м, для крокодила)">
+    <!-- Поле ввода для высоты прыжка (для кенгуру) -->
+    <label for="jumpHeightInput"></label><input type="number" id="jumpHeightInput" placeholder="Введите высоту прыжка (м, для кенгуру)">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для частичного ввода (имя и возраст) -->
+    <button id="setPartialButton">Установить имя и возраст</button>
+    <!-- Кнопка для вывода информации -->
+    <button id="getInfoButton">Показать информацию</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- Создайте класс Human, который будет содержать информацию о человеке.
+С помощью механизма наследования, реализуйте класс Builder (содержит информацию о строителе), класс Sailor
+(содержит информацию о моряке), класс Pilot (содержит информацию о летчике).
+Каждый из классов должен содержать необходимые для работы методы. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными человека</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Управление данными человека</h1>
+    <!-- Выпадающий список для выбора типа человека -->
+    <label for="humanTypeInput"></label><select id="humanTypeInput">
+        <option value="builder">Строитель</option>
+        <option value="sailor">Моряк</option>
+        <option value="pilot">Лётчик</option>
+    </select>
+    <!-- Поле ввода для имени -->
+    <label for="nameInput"></label><input type="text" id="nameInput" placeholder="Введите имя">
+    <!-- Поле ввода для возраста -->
+    <label for="ageInput"></label><input type="number" id="ageInput" placeholder="Введите возраст">
+    <!-- Поле ввода для специальности (для строителя) -->
+    <label for="specialtyInput"></label><input type="text" id="specialtyInput" placeholder="Введите специальность (для строителя)">
+    <!-- Поле ввода для типа судна (для моряка) -->
+    <label for="shipTypeInput"></label><input type="text" id="shipTypeInput" placeholder="Введите тип судна (для моряка)">
+    <!-- Поле ввода для типа самолёта (для лётчика) -->
+    <label for="planeTypeInput"></label><input type="text" id="planeTypeInput" placeholder="Введите тип самолёта (для лётчика)">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для частичного ввода (имя и возраст) -->
+    <button id="setPartialButton">Установить имя и возраст</button>
+    <!-- Кнопка для вывода информации -->
+    <button id="getInfoButton">Показать информацию</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

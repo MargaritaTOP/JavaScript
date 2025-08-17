@@ -1,0 +1,40 @@
+<!-- Создайте класс «Веб-сайт». Необходимо хранить в полях класса: название сайта, путь к сайту, описание
+сайта,ip адрес сайта. Реализуйте методы класса для ввода данных, вывода данных, реализуйте доступ к отдельным
+полям через методы класса. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными веб-сайта</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Контейнер для содержимого страницы -->
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными веб-сайта</h1>
+    <!-- Поле ввода для названия сайта -->
+    <label for="nameInput"></label><input type="text" id="nameInput" placeholder="Введите название сайта">
+    <!-- Поле ввода для пути к сайту (URL) -->
+    <label for="urlInput"></label><input type="text" id="urlInput" placeholder="Введите путь к сайту (URL)">
+    <!-- Поле ввода для описания сайта -->
+    <label for="descriptionInput"></label><input type="text" id="descriptionInput" placeholder="Введите описание сайта">
+    <!-- Поле ввода для IP-адреса сайта -->
+    <label for="ipInput"></label><input type="text" id="ipInput" placeholder="Введите IP-адрес сайта">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для получения названия сайта -->
+    <button id="getNameButton">Получить название</button>
+    <!-- Кнопка для получения пути к сайту -->
+    <button id="getUrlButton">Получить путь</button>
+    <!-- Кнопка для получения описания сайта -->
+    <button id="getDescriptionButton">Получить описание</button>
+    <!-- Кнопка для получения IP-адреса сайта -->
+    <button id="getIpButton">Получить IP-адрес</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

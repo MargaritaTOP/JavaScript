@@ -1,0 +1,44 @@
+<!-- Создайте класс «Город». Необходимо хранить в полях класса: название города, название страны, количество
+жителей в городе, телефонный код города, название районов города.Реализуйтеметодыклассадлявводаданных,
+вывода данных, реализуйте доступ к отдельным полям через методы класса. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными города</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Контейнер для содержимого страницы -->
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными города</h1>
+    <!-- Поле ввода для названия города -->
+    <label for="cityNameInput"></label><input type="text" id="cityNameInput" placeholder="Введите название города">
+    <!-- Поле ввода для названия страны -->
+    <label for="countryInput"></label><input type="text" id="countryInput" placeholder="Введите название страны">
+    <!-- Поле ввода для количества жителей -->
+    <label for="populationInput"></label><input type="number" id="populationInput" placeholder="Введите количество жителей">
+    <!-- Поле ввода для телефонного кода -->
+    <label for="phoneCodeInput"></label><input type="text" id="phoneCodeInput" placeholder="Введите телефонный код (например, +7)">
+    <!-- Поле ввода для названий районов -->
+    <label for="districtsInput"></label><input type="text" id="districtsInput" placeholder="Введите названия районов (через запятую)">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для получения названия города -->
+    <button id="getCityNameButton">Получить название города</button>
+    <!-- Кнопка для получения названия страны -->
+    <button id="getCountryButton">Получить страну</button>
+    <!-- Кнопка для получения количества жителей -->
+    <button id="getPopulationButton">Получить население</button>
+    <!-- Кнопка для получения телефонного кода -->
+    <button id="getPhoneCodeButton">Получить телефонный код</button>
+    <!-- Кнопка для получения названий районов -->
+    <button id="getDistrictsButton">Получить районы</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

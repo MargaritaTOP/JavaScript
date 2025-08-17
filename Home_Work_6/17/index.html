@@ -1,0 +1,47 @@
+<!-- Создайте абстрактный базовый класс Фигура с абстрактным методом для подсчета площади. Создайте
+производные классы: прямоугольник, круг, прямоугольный треугольник, трапеция со своими реализациями метода
+для подсчета площади. Для проверки определите массив ссылок на абстрактный класс, которым присваиваются
+адреса различных объектов классов-потомков. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+      <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными фигур</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными фигур</h1>
+    <!-- Выпадающий список для выбора типа фигуры -->
+    <label for="shapeTypeInput"></label><select id="shapeTypeInput">
+        <option value="rectangle">Прямоугольник</option>
+        <option value="circle">Круг</option>
+        <option value="rightTriangle">Прямоугольный треугольник</option>
+        <option value="trapezoid">Трапеция</option>
+    </select>
+    <!-- Поле ввода для ширины (для прямоугольника и прямоугольного треугольника) -->
+    <label for="widthInput"></label><input type="number" id="widthInput" placeholder="Введите ширину (для прямоугольника или треугольника)">
+    <!-- Поле ввода для высоты (для прямоугольника, треугольника, трапеции) -->
+    <label for="heightInput"></label><input type="number" id="heightInput" placeholder="Введите высоту">
+    <!-- Поле ввода для радиуса (для круга) -->
+    <label for="radiusInput"></label><input type="number" id="radiusInput" placeholder="Введите радиус (для круга)">
+    <!-- Поле ввода для основания трапеции -->
+    <label for="base1Input"></label><input type="number" id="base1Input" placeholder="Введите первое основание (для трапеции)">
+    <!-- Поле ввода для второго основания трапеции -->
+    <label for="base2Input"></label><input type="number" id="base2Input" placeholder="Введите второе основание (для трапеции)">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для частичного ввода (например, только ширина/радиус) -->
+    <button id="setPartialButton">Установить основные параметры</button>
+    <!-- Кнопка для вывода информации о текущей фигуре -->
+    <button id="getInfoButton">Показать информацию</button>
+    <!-- Кнопка для вывода всех фигур в массиве -->
+    <button id="showAllShapesButton">Показать все фигуры</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

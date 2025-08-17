@@ -1,0 +1,39 @@
+<!-- Создайте класс «Заграничный паспорт». Вам необходимо хранить информацию о номере паспорта, ФИО владельца,
+дате выдачи и т.д. Предусмотреть механизмы для инициализации полей класса -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Управление данными заграничного паспорта</title>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Контейнер для содержимого страницы -->
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными заграничного паспорта</h1>
+    <!-- Поле ввода для номера паспорта -->
+    <label for="numberInput"></label><input type="text" id="numberInput" placeholder="Введите номер паспорта">
+    <!-- Поле ввода для ФИО владельца -->
+    <label for="nameInput"></label><input type="text" id="nameInput" placeholder="Введите ФИО владельца">
+    <!-- Поле ввода для даты выдачи -->
+    <label for="issueDateInput"></label><input type="text" id="issueDateInput" placeholder="Введите дату выдачи (например, 2023-05-15)">
+    <!-- Поле ввода для органа, выдавшего паспорт -->
+    <label for="issuedByInput"></label><input type="text" id="issuedByInput" placeholder="Введите орган, выдавший паспорт">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для получения номера паспорта -->
+    <button id="getNumberButton">Получить номер</button>
+    <!-- Кнопка для получения ФИО владельца -->
+    <button id="getNameButton">Получить ФИО</button>
+    <!-- Кнопка для получения даты выдачи -->
+    <button id="getIssueDateButton">Получить дату выдачи</button>
+    <!-- Кнопка для получения органа, выдавшего паспорт -->
+    <button id="getIssuedByButton">Получить орган выдачи</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

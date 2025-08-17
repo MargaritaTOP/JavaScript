@@ -1,0 +1,43 @@
+<!-- Реализуйте класс «Самолёт». Необходимо хранить в полях класса: название самолёта, название производителя,
+год выпуска, тип самолёта. Реализуйте конструкторы и методы класса для ввода данных, вывода данных, реа
+лизуйте доступ к отдельным полям через методы класса. Используйте механизм перегрузки методов. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными самолёта</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Контейнер для содержимого страницы -->
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными самолёта</h1>
+    <!-- Поле ввода для названия самолёта -->
+    <label for="planeNameInput"></label><input type="text" id="planeNameInput" placeholder="Введите название самолёта">
+    <!-- Поле ввода для названия производителя -->
+    <label for="manufacturerInput"></label><input type="text" id="manufacturerInput" placeholder="Введите производителя">
+    <!-- Поле ввода для года выпуска -->
+    <label for="yearInput"></label><input type="number" id="yearInput" placeholder="Введите год выпуска">
+    <!-- Поле ввода для типа самолёта -->
+    <label for="typeInput"></label><input type="text" id="typeInput" placeholder="Введите тип самолёта">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для частичного ввода (название и производитель) -->
+    <button id="setPartialButton">Установить название и производителя</button>
+    <!-- Кнопка для получения названия самолёта -->
+    <button id="getPlaneNameButton">Получить название</button>
+    <!-- Кнопка для получения производителя -->
+    <button id="getManufacturerButton">Получить производителя</button>
+    <!-- Кнопка для получения года выпуска -->
+    <button id="getYearButton">Получить год выпуска</button>
+    <!-- Кнопка для получения типа самолёта -->
+    <button id="getTypeButton">Получить тип</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<!-- Подключение внешнего файла JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

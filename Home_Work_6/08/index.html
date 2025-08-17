@@ -1,0 +1,37 @@
+<!-- Создать абстрактный базовый класс Worker (работника) с методом Print(). Создайте четыре производных класса:
+President, Security, Manager, Engineer. Переопределите метод Print() для вывода информации, соответствующей
+каждому типу работника. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными работника</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Контейнер для содержимого страницы -->
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными работника</h1>
+    <!-- Выпадающий список для выбора типа работника -->
+    <label for="workerTypeInput"></label><select id="workerTypeInput">
+        <option value="president">Президент</option>
+        <option value="security">Охранник</option>
+        <option value="manager">Менеджер</option>
+        <option value="engineer">Инженер</option>
+    </select>
+    <!-- Поле ввода для имени работника -->
+    <label for="nameInput"></label><input type="text" id="nameInput" placeholder="Введите имя работника">
+    <!-- Поле ввода для должности работника -->
+    <label for="positionInput"></label><input type="text" id="positionInput" placeholder="Введите должность работника">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для вызова метода Print -->
+    <button id="printButton">Показать информацию</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

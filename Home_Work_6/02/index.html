@@ -1,0 +1,43 @@
+<!-- Создайте класс «Журнал». Необходимо хранить в полях класса: название журнала, год основания, описание журнала, контактный телефон, контактный e-mail.
+Реализуйте методы класса для ввода данных, вывода данных, реализуйте доступ к отдельным полям через методы класса. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Управление данными журнала</title>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Контейнер для содержимого страницы -->
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными журнала</h1>
+    <!-- Поле ввода для названия журнала -->
+    <label for="nameInput"></label><input type="text" id="nameInput" placeholder="Введите название журнала">
+    <!-- Поле ввода для года основания -->
+    <label for="yearInput"></label><input type="number" id="yearInput" placeholder="Введите год основания">
+    <!-- Поле ввода для описания журнала -->
+    <label for="descriptionInput"></label><input type="text" id="descriptionInput" placeholder="Введите описание журнала">
+    <!-- Поле ввода для контактного телефона -->
+    <label for="phoneInput"></label><input type="text" id="phoneInput" placeholder="Введите контактный телефон">
+    <!-- Поле ввода для контактного e-mail -->
+    <label for="emailInput"></label><input type="text" id="emailInput" placeholder="Введите контактный e-mail">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для получения названия журнала -->
+    <button id="getNameButton">Получить название</button>
+    <!-- Кнопка для получения года основания -->
+    <button id="getYearButton">Получить год основания</button>
+    <!-- Кнопка для получения описания журнала -->
+    <button id="getDescriptionButton">Получить описание</button>
+    <!-- Кнопка для получения контактного телефона -->
+    <button id="getPhoneButton">Получить телефон</button>
+    <!-- Кнопка для получения контактного e-mail -->
+    <button id="getEmailButton">Получить e-mail</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

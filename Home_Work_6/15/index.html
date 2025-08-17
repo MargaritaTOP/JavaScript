@@ -1,0 +1,43 @@
+<!-- Создайте класс Passport (паспорт), который будет содержать паспортную информацию о гражданине заданной страны.
+С помощью механизма наследования, реализуйте класс ForeignPassport (загранпаспорт) производный от Pass port.
+Напомним, что заграничный паспорт содержит помимо паспортных данных, также данные о визах, номер
+заграничного паспорта. Каждый из классов должен содержать необходимые методы. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными паспорта</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Заголовок первого уровня, описывающий задачу программы -->
+    <h1>Управление данными паспорта</h1>
+    <!-- Выпадающий список для выбора типа паспорта -->
+    <label for="passportTypeInput"></label><select id="passportTypeInput">
+        <option value="passport">Внутренний паспорт</option>
+        <option value="foreignPassport">Загранпаспорт</option>
+    </select>
+    <!-- Поле ввода для имени -->
+    <label for="nameInput"></label><input type="text" id="nameInput" placeholder="Введите ФИО">
+    <!-- Поле ввода для номера паспорта -->
+    <label for="passportNumberInput"></label><input type="text" id="passportNumberInput" placeholder="Введите номер паспорта">
+    <!-- Поле ввода для страны -->
+    <label for="countryInput"></label><input type="text" id="countryInput" placeholder="Введите страну">
+    <!-- Поле ввода для номера загранпаспорта (для загранпаспорта) -->
+    <label for="foreignPassportNumberInput"></label><input type="text" id="foreignPassportNumberInput" placeholder="Введите номер загранпаспорта">
+    <!-- Поле ввода для виз (для загранпаспорта) -->
+    <label for="visasInput"></label><input type="text" id="visasInput" placeholder="Введите визы (через запятую)">
+    <!-- Кнопка для создания объекта и вывода данных -->
+    <button id="createButton">Создать и показать данные</button>
+    <!-- Кнопка для частичного ввода (ФИО и номер паспорта) -->
+    <button id="setPartialButton">Установить ФИО и номер</button>
+    <!-- Кнопка для вывода информации -->
+    <button id="getInfoButton">Показать информацию</button>
+    <!-- Элемент для отображения результатов -->
+    <p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
