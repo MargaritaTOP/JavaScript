@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #1e1e1e; /* Тёмный фон */
+    color: #e0e0e0; /* Светлый текст */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #2d2d2d; /* Тёмный контейнер */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2 {
+    color: #ffffff; /* Белый цвет для заголовков */
+}
+
+pre {
+    white-space: pre-wrap;
+    background: #3c3c3c; /* Тёмный фон для текста */
+    color: #e0e0e0; /* Светлый текст */
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #555;
+    padding: 8px;
+    text-align: left;
+    color: #e0e0e0;
+}
+
+th {
+    background-color: #444; /* Тёмный фон для заголовков таблицы */
+}
+
+tr:nth-child(even) {
+    background-color: #3c3c3c; /* Чередующийся тёмный фон для строк */
+}
