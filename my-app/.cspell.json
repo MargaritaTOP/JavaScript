@@ -1,0 +1,7 @@
+{
+	"version": "0.2",
+	"language": "en",
+	"words": ["Segoe", "Tahoma", "Verdana"],
+	"flagWords": [],
+	"ignorePaths": ["node_modules/**", "build/**"]
+}
