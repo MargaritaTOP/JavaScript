@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>OddSum Pro - Тёмная тема</title>
+  <style>
+    :root {
+      --bg-primary: #121212;
+      --bg-secondary: #1e1e1e;
+      --bg-tertiary: #2d2d2d;
+      --text-primary: #e0e0e0;
+      --text-secondary: #a0a0a0;
+      --accent-primary: #bb86fc;
+      --accent-secondary: #03dac6;
+      --success: #4caf50;
+      --warning: #ff9800;
+      --error: #cf6679;
+      --border-radius: 12px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--bg-tertiary);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent-primary);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1em;
+    }
+
+    .input-section {
+      background: var(--bg-tertiary);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      margin-bottom: 25px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 15px;
+      background: var(--bg-secondary);
+      border: 2px solid #404040;
+      border-radius: var(--border-radius);
+      color: var(--text-primary);
+      font-size: 16px;
+      transition: var(--transition);
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.1);
+    }
+
+    .button-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 15px 25px;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, var(--accent-primary), #9b59b6);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(187, 134, 252, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 2px solid #404040;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-secondary);
+      transform: translateY(-2px);
+    }
+
+    .result-section {
+      background: var(--bg-tertiary);
+      border-radius: var(--border-radius);
+      padding: 25px;
+      margin-top: 25px;
+    }
+
+    .result-title {
+      color: var(--accent-secondary);
+      margin-bottom: 20px;
+      font-size: 1.3em;
+    }
+
+    .steps-container {
+      margin-bottom: 25px;
+    }
+
+    .step {
+      background: var(--bg-secondary);
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--accent-primary);
+      transition: var(--transition);
+    }
+
+    .step:hover {
+      transform: translateX(5px);
+    }
+
+    .final-result {
+      background: linear-gradient(135deg, var(--bg-tertiary), #2c3e50);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      border: 2px solid var(--accent-primary);
+    }
+
+    .final-sum {
+      font-size: 2.5em;
+      font-weight: bold;
+      background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 10px 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .stat-item {
+      background: var(--bg-secondary);
+      padding: 15px;
+      border-radius: var(--border-radius);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: var(--accent-secondary);
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.9em;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--bg-tertiary);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      .button-group {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()" title="Переключить тему">
+  🌙
+</button>
+
+<div class="container fade-in">
+  <div class="header">
+    <h1>OddSum Pro</h1>
+    <p class="subtitle">Калькулятор суммы чисел на нечётных позициях</p>
+  </div>
+
+  <div class="input-section">
+    <div class="input-group">
+      <label for="numbersInput">📊 Введите числа через запятую:</label>
+      <input type="text" id="numbersInput" value="10, 20, 30, 40, 50, 60, 70"
+             placeholder="Например: 1, 2, 3, 4, 5...">
+    </div>
+
+    <div class="button-group">
+      <button class="btn-primary" onclick="calculateSum()">
+        🧮 Рассчитать сумму
+      </button>
+      <button class="btn-secondary" onclick="testWithRandomNumbers()">
+        🎲 Случайные числа
+      </button>
+      <button class="btn-secondary" onclick="clearResults()">
+        🗑️ Очистить
+      </button>
+    </div>
+  </div>
+
+  <div class="result-section" id="result">
+    <h3 class="result-title">📈 Результаты расчета</h3>
+    <p>Введите числа и нажмите "Рассчитать сумму"</p>
+  </div>
+</div>
+
+<script>
+  class OddPositionSumIterator {
+    constructor(array) {
+      this.array = array;
+      this.index = 0;
+      this.sum = 0;
+      this.steps = [];
+    }
+
+    [Symbol.iterator]() {
+      return this;
+    }
+
+    next() {
+      while (this.index < this.array.length) {
+        const currentIndex = this.index;
+        const currentValue = this.array[this.index];
+        this.index++;
+
+        if (currentIndex % 2 === 0) {
+          this.sum += currentValue;
+          const stepInfo = {
+            position: currentIndex + 1,
+            value: currentValue,
+            currentSum: this.sum,
+            index: currentIndex
+          };
+          this.steps.push(stepInfo);
+
+          return {
+            value: stepInfo,
+            done: false
+          };
+        }
+      }
+
+      return {
+        value: {
+          finalSum: this.sum,
+          totalSteps: this.steps.length,
+          processedNumbers: this.array.length
+        },
+        done: true
+      };
+    }
+
+    getSteps() {
+      return this.steps;
+    }
+
+    getFinalSum() {
+      return this.sum;
+    }
+
+    reset() {
+      this.index = 0;
+      this.sum = 0;
+      this.steps = [];
+    }
+  }
+
+  function calculateSum() {
+    const input = document.getElementById('numbersInput').value;
+    const numbers = input.split(',')
+            .map(num => num.trim())
+            .filter(num => num !== '')
+            .map(Number)
+            .filter(num => !isNaN(num));
+
+    if (numbers.length === 0) {
+      showError('Пожалуйста, введите корректные числа!');
+      return;
+    }
+
+    const iterator = new OddPositionSumIterator(numbers);
+    const resultDiv = document.getElementById('result');
+
+    // Красивая анимация появления результатов
+    resultDiv.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <div class="loader" style="font-size: 2em;">⏳</div>
+                    <p>Вычисляем сумму...</p>
+                </div>
+            `;
+
+    // Имитация загрузки для лучшего UX
+    setTimeout(() => {
+      showResults(iterator, numbers);
+    }, 500);
+  }
+
+  function showResults(iterator, numbers) {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
+
+    // Заголовок с анимацией
+    const title = document.createElement('h3');
+    title.className = 'result-title fade-in';
+    title.textContent = `Расчет для массива: [${numbers.join(', ')}]`;
+    resultDiv.appendChild(title);
+
+    // Шаги расчета
+    const stepsContainer = document.createElement('div');
+    stepsContainer.className = 'steps-container';
+
+    let stepResult = iterator.next();
+    let stepCount = 0;
+
+    while (!stepResult.done) {
+      const step = stepResult.value;
+      const stepElement = document.createElement('div');
+      stepElement.className = 'step fade-in';
+      stepElement.style.animationDelay = `${stepCount * 0.1}s`;
+      stepElement.innerHTML = `
+                    🔹 <strong>Позиция ${step.position}:</strong>
+                    число <span style="color: var(--accent-primary)">${step.value}</span> →
+                    сумма: <span style="color: var(--accent-secondary)">${step.currentSum}</span>
+                `;
+      stepsContainer.appendChild(stepElement);
+
+      stepResult = iterator.next();
+      stepCount++;
+    }
+
+    resultDiv.appendChild(stepsContainer);
+
+    // Финальный результат
+    const finalResult = stepResult.value;
+    const finalElement = document.createElement('div');
+    finalElement.className = 'final-result fade-in';
+    finalElement.style.animationDelay = `${stepCount * 0.1 + 0.2}s`;
+    finalElement.innerHTML = `
+                <h3>ИТОГОВЫЙ РЕЗУЛЬТАТ</h3>
+                <div class="final-sum">${finalResult.finalSum}</div>
+                <p>Общая сумма чисел на нечётных позициях</p>
+            `;
+    resultDiv.appendChild(finalElement);
+
+    // Статистика
+    const statsElement = document.createElement('div');
+    statsElement.className = 'stats fade-in';
+    statsElement.style.animationDelay = `${stepCount * 0.1 + 0.4}s`;
+    statsElement.innerHTML = `
+                <div class="stat-item">
+                    <div class="stat-value">${finalResult.processedNumbers}</div>
+                    <div class="stat-label">Всего чисел</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${finalResult.totalSteps}</div>
+                    <div class="stat-label">Нечётных позиций</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${finalResult.processedNumbers - finalResult.totalSteps}</div>
+                    <div class="stat-label">Чётных позиций</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${(finalResult.finalSum / finalResult.totalSteps).toFixed(2)}</div>
+                    <div class="stat-label">Среднее значение</div>
+                </div>
+            `;
+    resultDiv.appendChild(statsElement);
+  }
+
+  function testWithRandomNumbers() {
+    const randomNumbers = Array.from({length: 8}, () => Math.floor(Math.random() * 100) + 1);
+    document.getElementById('numbersInput').value = randomNumbers.join(', ');
+    calculateSum();
+  }
+
+  function clearResults() {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `
+                <h3 class="result-title">Результаты расчета</h3>
+                <p>Введите числа и нажмите "Рассчитать сумму"</p>
+            `;
+  }
+
+  function showError(message) {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `
+                <div style="color: var(--error); text-align: center; padding: 20px;">
+                    <h3>Ошибка</h3>
+                    <p>${message}</p>
+                </div>
+            `;
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle('light-theme');
+    const toggleBtn = document.querySelector('.theme-toggle');
+    if (document.body.classList.contains('light-theme')) {
+      toggleBtn.innerHTML = '☀️';
+    } else {
+      toggleBtn.innerHTML = '🌙';
+    }
+  }
+
+  // Добавляем стили для светлой темы
+  const style = document.createElement('style');
+  style.textContent = `
+            .light-theme {
+                --bg-primary: #f5f5f5;
+                --bg-secondary: #ffffff;
+                --bg-tertiary: #e8e8e8;
+                --text-primary: #333333;
+                --text-secondary: #666666;
+                --accent-primary: #7b1fa2;
+                --accent-secondary: #0288d1;
+            }
+        `;
+  document.head.appendChild(style);
+
+  // Демонстрация в консоли
+  console.log('%cOddSum Pro - Тёмная тема', 'font-size: 16px; color: #bb86fc; font-weight: bold;');
+  console.log('Готов к работе! Введите числа и рассчитайте сумму на нечётных позициях.');
+</script>
+</body>
+</html>
