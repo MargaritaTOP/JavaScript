@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Сортировщик чисел</title>
+</head>
+<body>
+<h2>Сортировка чисел</h2>
+
+<label for="inputNumber"></label><input type="number" id="inputNumber" placeholder="Введите число">
+<button onclick="start()">Старт</button>
+
+<div id="result"></div>
+
+<script>
+    function start() {
+
+        const num = parseInt(document.getElementById('inputNumber').value);
+
+        if (isNaN(num)) {
+            alert('Введите число!');
+            return;
+        }
+
+
+        const numbers = [];
+        for (let i = 0; i < Math.abs(num); i++) {
+            numbers.push(Math.floor(Math.random() * 101) - 50);
+        }
+
+
+        const originalNumbers = [...numbers];
+
+
+        if (num % 2 === 0) {
+            numbers.sort((a, b) => b - a);
+        } else {
+            numbers.sort((a, b) => a - b);
+        }
+
+          document.getElementById('result').innerHTML =
+            `<h3>Результаты:</h3>
+                 <p><strong>Введенное число:</strong> ${num} (${num % 2 === 0 ? 'четное' : 'нечетное'})</p>
+                 <p><strong>Исходный массив:</strong> [${originalNumbers.join(', ')}]</p>
+                 <p><strong>Отсортированный массив:</strong> [${numbers.join(', ')}]</p>
+                 <p><strong>Тип сортировки:</strong> ${num % 2 === 0 ? 'по убыванию' : 'по возрастанию'}</p>`;
+    }
+</script>
+</body>
+</html>
