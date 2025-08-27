@@ -1,50 +1,311 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #1e1e1e; /* Тёмный фон */
-    color: #e0e0e0; /* Светлый текст */
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    background: #2d2d2d; /* Тёмный контейнер */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: #2d2d2d;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-h1, h2 {
-    color: #ffffff; /* Белый цвет для заголовков */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #444;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #4a90e2, #63b3ed);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #3a80d2, #53a3dd);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+}
+
+.btn-secondary {
+    background: #555;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #666;
+    transform: translateY(-2px);
+}
+
+.text-section, .frequency-section, .chart-section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-left: 4px solid #4a90e2;
+    padding-left: 10px;
+}
+
+h3 {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.text-container {
+    background: #3c3c3c;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 pre {
     white-space: pre-wrap;
-    background: #3c3c3c; /* Тёмный фон для текста */
-    color: #e0e0e0; /* Светлый текст */
-    padding: 10px;
-    border: 1px solid #555;
-    border-radius: 4px;
+    color: #e0e0e0;
+    font-family: 'Consolas', monospace;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #3c3c3c;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #4a90e2;
+}
+
+.table-container {
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
+    background: #3c3c3c;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #555;
-    padding: 8px;
+    padding: 12px 15px;
     text-align: left;
-    color: #e0e0e0;
+    border-bottom: 1px solid #555;
 }
 
 th {
-    background-color: #444; /* Тёмный фон для заголовков таблицы */
+    background-color: #444;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+th:hover {
+    background-color: #4a5568;
+}
+
+.sort-icon {
+    margin-left: 5px;
+    font-size: 0.9em;
+}
+
+.sorted-asc .sort-icon::after {
+    content: "↑";
+}
+
+.sorted-desc .sort-icon::after {
+    content: "↓";
 }
 
 tr:nth-child(even) {
-    background-color: #3c3c3c; /* Чередующийся тёмный фон для строк */
+    background-color: #363636;
+}
+
+tr:hover {
+    background-color: #4a4a4a;
+}
+
+.chart-section {
+    margin-bottom: 20px;
+}
+
+.chart-scroll-container {
+    position: relative;
+    background: #3c3c3c;
+    padding: 20px;
+    border-radius: 8px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.chart-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+}
+
+.chart-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+.chart-item {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 100%;
+    margin-right: 20px;
+    position: relative;
+}
+
+.scroll-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 10px;
+    background: #3c3c3c;
+    border-radius: 8px;
+}
+
+.scroll-btn {
+    padding: 8px 15px;
+    background: #555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.scroll-btn:hover {
+    background: #666;
+}
+
+.scroll-track {
+    flex: 1;
+    height: 8px;
+    background: #555;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.scroll-thumb {
+    position: absolute;
+    height: 100%;
+    background: #4a90e2;
+    border-radius: 4px;
+    min-width: 30px;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-card, .text-container, .table-container, .chart-scroll-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .chart-scroll-container {
+        height: 300px;
+    }
+
+    .chart-item {
+        width: 250px;
+    }
 }
