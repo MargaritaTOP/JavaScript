@@ -1,0 +1,53 @@
+<!-- Пользователь вводит число Программа генерирует набор случайных чисел от -50 до +50
+Выделите четные числа и отсортируйте по убыванию Выделите нечетные числа и отсортируйте по возрастанию
+Результат необходимо вернуть обратно в одну коллекцию -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сортировка случайных чисел</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Сортировка случайных чисел</h1>
+
+    <div class="description">
+        <p>Введите количество случайных чисел для генерации (от -50 до +50).</p>
+        <p>Программа выделит четные числа (отсортирует по убыванию) и нечетные числа (отсортирует по возрастанию), затем объединит их в одну коллекцию.</p>
+    </div>
+
+    <div class="input-group">
+        <label for="numberInput">Введите количество чисел:</label>
+        <input type="number" id="numberInput" min="1" placeholder="Введите число">
+    </div>
+
+    <button id="generateButton">Сгенерировать и отсортировать</button>
+
+    <div class="results">
+        <div class="result-section">
+            <h2>Сгенерированные числа:</h2>
+            <div id="generatedNumbers" class="numbers-container"></div>
+        </div>
+
+        <div class="result-section">
+            <h2>Четные числа (по убыванию):</h2>
+            <div id="evenNumbers" class="numbers-container"></div>
+        </div>
+
+        <div class="result-section">
+            <h2>Нечетные числа (по возрастанию):</h2>
+            <div id="oddNumbers" class="numbers-container"></div>
+        </div>
+
+        <div class="result-section final">
+            <h2>Итоговая коллекция:</h2>
+            <div id="finalCollection" class="numbers-container"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
