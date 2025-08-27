@@ -67,7 +67,7 @@ const text = `Вот дом,
 
 Которая доит корову безрогую,
 
-Лягнувшую старого пса без хвоста,
+Лягнувшую старого пса без хвosta,
 
 Который за шиворот треплет кота,
 
@@ -128,10 +128,11 @@ let wordFrequency = new Map();
 let sortedWords = [];
 let currentSort = { column: 'count', direction: 'desc' };
 let wordCharts = [];
+let totalWords = 0;
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Инициализация элементов управления
+
     document.getElementById('analyzeButton').addEventListener('click', analyzeText);
     document.getElementById('resetButton').addEventListener('click', resetAnalysis);
 
@@ -160,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function analyzeText() {
-    // Создаём массив слов из текста
+
     const words = text
         .replace(/[,.\n]/g, ' ')
         .toLowerCase()
@@ -168,9 +169,10 @@ function analyzeText() {
         .filter(word => word.length > 0);
 
 
-    document.getElementById('wordCount').textContent = words.length;
+    totalWords = words.length;
+    document.getElementById('wordCount').textContent = totalWords;
 
-    // Подсчитываем частоту слов
+
     wordFrequency = new Map();
     words.forEach(word => {
         wordFrequency.set(word, (wordFrequency.get(word) || 0) + 1);
@@ -179,12 +181,11 @@ function analyzeText() {
 
     document.getElementById('uniqueWords').textContent = wordFrequency.size;
 
-    // Сортируем слова
+
     sortWords();
 
 
-    const mostFrequent = sortedWords.length > 0 ? sortedWords[0][0] : '-';
-    document.getElementById('mostFrequent').textContent = mostFrequent;
+    document.getElementById('mostFrequent').textContent = sortedWords.length > 0 ? sortedWords[0][0] : '-';
 
 
     renderTable();
@@ -226,9 +227,6 @@ function renderTable() {
     });
 
 
-    const totalWords = Array.from(wordFrequency.values()).reduce((sum, count) => sum + count, 0);
-
-
     sortedWords.forEach(([word, count]) => {
         const percentage = ((count / totalWords) * 100).toFixed(2);
         const row = document.createElement('tr');
@@ -268,8 +266,25 @@ function createCharts() {
         const chartItem = document.createElement('div');
         chartItem.className = 'chart-item';
 
+        const chartContainer = document.createElement('div');
+        chartContainer.className = 'chart-container';
+
         const canvas = document.createElement('canvas');
-        chartItem.appendChild(canvas);
+        chartContainer.appendChild(canvas);
+
+
+        const chartInfo = document.createElement('div');
+        chartInfo.className = 'chart-info';
+
+        const percentage = ((count / totalWords) * 100).toFixed(2);
+
+        chartInfo.innerHTML = `
+            <div>Количество: <span class="count-value">${count}</span></div>
+            <div>Процент: <span class="percent-value">${percentage}%</span></div>
+        `;
+
+        chartItem.appendChild(chartContainer);
+        chartItem.appendChild(chartInfo);
         chartWrapper.appendChild(chartItem);
 
 

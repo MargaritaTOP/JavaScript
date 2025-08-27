@@ -202,7 +202,7 @@ tr:hover {
     background: #3c3c3c;
     padding: 20px;
     border-radius: 8px;
-    height: 400px;
+    height: 450px; /* Увеличили высоту для подписей */
     overflow: hidden;
 }
 
@@ -226,6 +226,36 @@ tr:hover {
     height: 100%;
     margin-right: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-container {
+    flex: 1;
+    position: relative;
+}
+
+.chart-info {
+    margin-top: 10px;
+    text-align: center;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.chart-info div {
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+.count-value {
+    color: #4a90e2;
+    font-weight: bold;
+}
+
+.percent-value {
+    color: #a6e3a1;
+    font-weight: bold;
 }
 
 .scroll-controls {
@@ -269,7 +299,7 @@ tr:hover {
     min-width: 30px;
 }
 
-/* Анимации */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -279,7 +309,7 @@ tr:hover {
     animation: fadeIn 0.5s ease-out;
 }
 
-/* Адаптивность */
+
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -302,7 +332,7 @@ tr:hover {
     }
 
     .chart-scroll-container {
-        height: 300px;
+        height: 400px;
     }
 
     .chart-item {
