@@ -11,10 +11,34 @@
 <body>
 <div class="container">
     <h1>Шифрование строки-предложения</h1>
-    <label for="stringInput"></label><input type="text" id="stringInput" placeholder="Введите предложение">
+
+    <div class="description">
+        <p>Дана строка-предложение. Зашифровать ее, поместив вначале все символы, расположенные на четных позициях строки, а затем, в обратном порядке, все символы, расположенные на нечетных позициях.</p>
+        <p class="example">Например, строка «Программа» превратится в «ргамамроП»</p>
+    </div>
+
+    <div class="input-group">
+        <label for="stringInput">Введите текст для шифрования:</label>
+        <input type="text" id="stringInput" placeholder="Введите предложение">
+
+    </div>
+
     <button id="calculateButton">Зашифровать</button>
-    <p id="result"></p>
+
+    <div class="result-container">
+        <div class="result-title">Результат:</div>
+        <div id="result"></div>
+    </div>
+
+    <div class="position-explanation">
+        <p><strong>Пояснение:</strong> Позиции символов в строке считаются с 1, а не с 0. Таким образом, первый символ находится на позиции 1 (нечетная), второй на позиции 2 (четная) и т.д.</p>
+    </div>
+
+    <footer>
+
+    </footer>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
