@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #1e1e1e; /* Тёмный фон */
+    color: #e0e0e0; /* Светлый текст */
+}
+
+.container {
+    background: #2a2a2a; /* Тёмно-серый фон контейнера */
+    border: 1px solid #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #61dafb; /* Голубой цвет для заголовка */
+}
+
+p {
+    text-align: center;
+    color: #b0b0b0; /* Серый текст для описания */
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: #333; /* Тёмный фон для блока задачи */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    background: #3a3a3a;
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+input[type="date"]:focus {
+    outline: 2px solid #61dafb;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #007bff; /* Синий фон кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #0056b3; /* Тёмно-синий при наведении */
+}
+
+button:focus {
+    outline: 2px solid #61dafb; /* Голубой контур при фокусе */
+}
+
+button:active {
+    transform: scale(0.95); /* Эффект нажатия */
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    background: #3a3a3a; /* Тёмно-серый фон для textarea */
+    border: 3px solid #61dafb; /* Толстая сплошная голубая полоса */
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-family: monospace;
+    font-size: 16px;
+    resize: vertical;
+    min-height: 120px;
+    opacity: 0; /* Начальная прозрачность для анимации */
+    transition: opacity 0.3s ease-in-out;
+}
+
+textarea.show {
+    opacity: 1; /* Полная видимость при добавлении класса */
+}
+
+textarea:focus {
+    outline: 2px solid #61dafb;
+}

@@ -2,16 +2,24 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Управление окном</title>
+    <title>Управление окном браузера</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js"></script>
 </head>
 <body>
 <div class="container">
-    <h1>Управление новым окном</h1>
-    <button id="openWindow">Открыть окно</button>
-    <button id="closeWindow">Закрыть окно</button>
+    <h1>🖥️ Управление окном браузера</h1>
+    <p>Нажмите на первую кнопку или клавишу Enter, чтобы открыть новое окно с сайтом IT Step (640x480). Используйте вторую кнопку или Enter, чтобы закрыть его.</p>
+
+    <div class="task">
+        <button onclick="openWindow()" aria-label="Открыть новое окно с сайтом IT Step">Открыть окно</button>
+        <button onclick="closeWindow()" aria-label="Закрыть открытое окно">Закрыть окно</button>
+        <div class="result" id="output" role="alert" aria-live="polite"></div>
+    </div>
 </div>
-<script src="script.js"></script>
 </body>
 </html>

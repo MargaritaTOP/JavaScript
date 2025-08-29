@@ -1,44 +1,73 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    max-width: 800px;
+    margin: 30px auto;
     padding: 20px;
-    background-color: #1e1e1e; /* Тёмный фон */
+    background: #1e1e1e; /* Тёмный фон */
     color: #e0e0e0; /* Светлый текст */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .container {
-    text-align: center;
-    background: #2d2d2d; /* Тёмный контейнер */
+    background: #2a2a2a; /* Тёмно-серый фон контейнера */
+    border: 1px solid #444;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-    color: #ffffff; /* Белый цвет для заголовка */
-    margin-bottom: 20px;
+    text-align: center;
+    color: #61dafb; /* Голубой цвет для заголовка */
+}
+
+p {
+    text-align: center;
+    color: #b0b0b0; /* Серый текст для описания */
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
 }
 
 button {
     padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    background-color: #444; /* Тёмный фон кнопок */
-    color: #e0e0e0; /* Светлый текст кнопок */
-    border: 1px solid #555;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    transition: background 0.2s;
 }
 
 button:hover {
-    background-color: #555; /* Цвет при наведении */
+    background: #0056b3;
 }
 
-button:active {
-    background-color: #666; /* Цвет при нажатии */
+button:focus {
+    outline: 2px solid #61dafb;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 10px;
+    background: #3a3a3a;
+    border: 3px solid #61dafb;
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-family: monospace;
+    white-space: pre-line;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.result.show {
+    opacity: 1;
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Прогноз погоды</title>
+    <!-- Подключаем локальную копию jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Подключаем внешний CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем внешний JavaScript -->
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>🌦️ Прогноз погоды</h1>
+    <p>Введите дату и выберите погодные условия, затем нажмите на кнопку или клавишу Enter, чтобы сохранить данные.</p>
+
+    <div class="task">
+        <form id="weatherForm">
+            <div class="form-group">
+                <label for="date">Дата:</label>
+                <input type="date" id="date" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label>Погодные условия:</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="weather" value="Солнечно" aria-label="Солнечная погода"> Солнечно
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weather" value="Пасмурно" aria-label="Пасмурная погода"> Пасмурно
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weather" value="Дождь" aria-label="Дождливая погода"> Дождь
+                    </label>
+                </div>
+            </div>
+            <button type="submit" aria-label="Сохранить данные о погоде">Сохранить данные</button>
+        </form>
+        <div class="form-group">
+            <label for="output">Введенные данные:</label>
+            <textarea id="output" rows="6" readonly aria-readonly="true"></textarea>
+        </div>
+    </div>
+</div>
+</body>
+</html>

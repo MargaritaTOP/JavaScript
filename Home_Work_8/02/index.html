@@ -2,16 +2,22 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список языков системы</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js"></script>
 </head>
 <body>
 <div class="container">
-    <h1>Языки системы</h1>
-    <h2>Список языков:</h2>
-    <ul id="languageList"></ul>
+    <h1>🌐 Список языков системы</h1>
+    <p>При загрузке страницы отображается список языков, установленных в вашей системе. Предпочтительный язык выделен жирным шрифтом.</p>
+
+    <div class="task">
+        <div class="result" id="output" role="alert" aria-live="polite"></div>
+    </div>
 </div>
-<script src="script.js"></script>
 </body>
 </html>
