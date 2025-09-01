@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Характеристики книги</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        .container {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #61dafb;
+        }
+
+        p {
+            text-align: center;
+            color: #b0b0b0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background: #333;
+            color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .tab-button.active {
+            background: #61dafb;
+            color: #1e1e1e;
+        }
+
+        .tab-button:hover {
+            background: #555;
+        }
+
+        .tab-button:focus {
+            outline: 2px solid #61dafb;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .task {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #444;
+        }
+
+        th {
+            background: #3a3a3a;
+            color: #61dafb;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #e0e0e0;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #444;
+            border-radius: 5px;
+            background: #3a3a3a;
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus, select:focus {
+            outline: 2px solid #61dafb;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        button:focus {
+            outline: 2px solid #61dafb;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            background: #3a3a3a;
+            border: 3px solid #61dafb;
+            border-radius: 5px;
+            color: #e0e0e0;
+            font-family: monospace;
+            font-size: 16px;
+            resize: vertical;
+            min-height: 120px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        textarea.show {
+            opacity: 1;
+        }
+
+        textarea:focus {
+            outline: 2px solid #61dafb;
+        }
+
+        .button-group {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📚 Характеристики книги</h1>
+    <p>Заполните характеристики книги, затем нажмите «Сохранить» для сохранения в JSON или «Восстановить» для загрузки из файла. Вкладка «О книге» открывает информацию о книгах.</p>
+
+    <div class="tabs">
+        <button class="tab-button active" data-tab="general">Общие</button>
+        <button class="tab-button" data-tab="personal">Персональные</button>
+        <button class="tab-button" data-tab="special">Специальные</button>
+        <button class="tab-button" data-tab="about">О книге</button>
+    </div>
+
+    <div class="task">
+        <form id="bookForm">
+            <div id="general" class="tab-content active">
+                <table>
+                    <tr>
+                        <th>Общие характеристики</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="title">Наименование:</label>
+                                <input type="text" id="title" required aria-required="true" placeholder="Введите название книги">
+                            </div>
+                            <div class="form-group">
+                                <label for="author">Автор:</label>
+                                <input type="text" id="author" required aria-required="true" placeholder="Введите автора">
+                            </div>
+                            <div class="form-group">
+                                <label for="genre">Жанр:</label>
+                                <select id="genre" required aria-required="true">
+                                    <option value="" disabled selected>Выберите жанр</option>
+                                    <option value="Фантастика">Фантастика</option>
+                                    <option value="Детектив">Детектив</option>
+                                    <option value="Роман">Роман</option>
+                                    <option value="Научная">Научная</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="series">Серия:</label>
+                                <input type="text" id="series" placeholder="Введите серию (если есть)">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="personal" class="tab-content">
+                <table>
+                    <tr>
+                        <th>Персональные характеристики</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label>Цвет:</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="color" value="Цветная" required aria-label="Цветная книга"> Цветная</label>
+                                    <label><input type="radio" name="color" value="Чёрно-белая" aria-label="Чёрно-белая книга"> Чёрно-белая</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Обложка:</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="cover" value="Твёрдая" aria-label="Твёрдая обложка"> Твёрдая</label>
+                                    <label><input type="checkbox" name="cover" value="Мягкая" aria-label="Мягкая обложка"> Мягкая</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="format">Формат:</label>
+                                <select id="format" required aria-required="true">
+                                    <option value="" disabled selected>Выберите формат</option>
+                                    <option value="A4">A4</option>
+                                    <option value="A5">A5</option>
+                                    <option value="Покет">Покет</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pages">Количество страниц:</label>
+                                <input type="number" id="pages" min="1" required aria-required="true" placeholder="Введите количество страниц">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="special" class="tab-content">
+                <table>
+                    <tr>
+                        <th>Специальные характеристики</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="price">Цена (₽):</label>
+                                <input type="number" id="price" min="0" step="0.01" required aria-required="true" placeholder="Введите цену">
+                            </div>
+                            <div class="form-group">
+                                <label for="year">Год издания:</label>
+                                <input type="number" id="year" min="1800" max="2025" required aria-required="true" placeholder="Введите год">
+                            </div>
+                            <div class="form-group">
+                                <label for="weight">Вес (г):</label>
+                                <input type="number" id="weight" min="0" required aria-required="true" placeholder="Введите вес">
+                            </div>
+                            <div class="form-group">
+                                <label for="condition">Состояние:</label>
+                                <select id="condition" required aria-required="true">
+                                    <option value="" disabled selected>Выберите состояние</option>
+                                    <option value="Новое">Новое</option>
+                                    <option value="Хорошее">Хорошее</option>
+                                    <option value="Удовлетворительное">Удовлетворительное</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="about" class="tab-content">
+
+            </div>
+            <div class="button-group">
+                <button type="submit" aria-label="Сохранить данные в JSON">Сохранить</button>
+                <button type="button" id="restore" aria-label="Восстановить данные из JSON">Восстановить</button>
+            </div>
+        </form>
+        <div class="form-group">
+            <label for="output">Введенные данные:</label>
+            <textarea id="output" rows="10" readonly aria-readonly="true"></textarea>
+        </div>
+    </div>
+</div>
+</body>
+</html>
